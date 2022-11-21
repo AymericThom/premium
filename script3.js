@@ -23,7 +23,7 @@ galleryImgs.forEach((item) => {
 // Handle Publish Date
 const dateData = document.getElementById("dateData");
 const sinceData = document.getElementById("sinceData");
-let publishDate = "2022-04-26";
+let publishDate = "2022-11-21";
 
 dateData.innerHTML = moment(publishDate).format("LL");
 sinceData.innerHTML = moment(publishDate).fromNow();
