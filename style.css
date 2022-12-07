@@ -1,503 +1,239 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
- @import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700');
- 
- body{
-	 font-family: 'Poppins', sans-serif;
-	 font-weight: 300;
-	 font-size: 15px;
-	 line-height: 1.6;
-	 color: #fff;
-	 background-color: #1f2029;
-	 overflow: hidden;
-	 height: 100vh;
-	 -webkit-transition: all 300ms linear;
-	 transition: all 300ms linear;
-	 perspective: 800px;
- }
- a {
-	 cursor: pointer;
- }
- a:hover {
-	 text-decoration: none;
- }
- ::selection {
-	 color: #c4c3ca;
-	 background-color: #000;
- }
- ::-moz-selection {
-	 color: #c4c3ca;
-	 background-color: #000;
- }
- 
- /* #Cursor
- ================================================== */
- 
- .cursor,
- .cursor2,
- .cursor3{
-	 position: fixed;
-	 border-radius: 50%;	
-	 transform: translateX(-50%) translateY(-50%);
-	 pointer-events: none;
-	 left: -100px;
-	 top: 50%;
-	 mix-blend-mode: difference;
-	 -webkit-transition: all 300ms linear;
-	 transition: all 300ms linear;
- }
- .cursor{
-	 background-color: #fff;
-	 height: 0;
-	 width: 0;
-	 z-index: 99999;
- }
- .cursor2,.cursor3{
-	 height: 36px;
-	 width: 36px;
-	 z-index:99998;
-	 -webkit-transition:all 0.3s ease-out;
-	 transition:all 0.3s ease-out
- }
- .cursor2.hover,
- .cursor3.hover{
-	 -webkit-transform:scale(2) translateX(-25%) translateY(-25%);
-	 transform:scale(2) translateX(-25%) translateY(-25%);
-	 border:none
- }
- .cursor2{
-	 border: 2px solid #fff;
- }
- .cursor2.hover{
-	 background: rgba(255,255,255,1);
-	 border-color: transparent;
- }
- 
- @media screen and (max-width: 1200px){
-	 .cursor,.cursor2,.cursor3{
-		 display: none
-	 }
- }
- 
- /* #Primary style
- ================================================== */
- 
- .hero-section {
-	 position: relative;
-	 width: 100%;
-	 display: block;
-	 overflow: hidden;
-	 height: 100vh;
-	 background-image: url('https://d3isma7snj3lcx.cloudfront.net/images/news/30/3050848391/les-roues-de-l-infortune-quelle-est-encore-la-place-de-la-voiture-dans-gta-9f983456.jpg');
-	 background-size: cover;
-	 background-position: center;
-	 transform: scale(1) rotateX(0);
-	 box-shadow: 0 0 40px rgba(0,0,0,0.2);
-	 -webkit-transition: all 300ms linear;
-	 transition: all 300ms linear;
-	 -webkit-transition-delay: 400ms;
-	 transition-delay: 400ms;
-	 transform-origin: center top;
- }
- .hero-section h1{
-	 color: #fff;
-	 font-size: 5vw;
-	 line-height: 1;
-	 font-weight: 900;
- }
- .hero-section .dancing{
-	 font-family: 'Dancing Script', cursive;
-	 letter-spacing: 1px;
-	 color: #866BAF;
-	 font-size: 26px;
-	 line-height: 1;
-	 font-weight: 700;
- }
- @media screen and (max-width: 580px){
-	 .hero-section .dancing{
-		 font-size: 18px;
-	 }
- }
- .hero-section p{
-	 font-size: 15px;
-	 line-height: 20px;
-	 font-weight: 500;
-	 color: #fff;
-	 letter-spacing: 1px;
- }
- .hero-section p span{
-	 margin-left: 15px;
-	 margin-right: 15px;
-	 position: relative;
-	 display: inline-block;
-	 cursor: pointer;
-	 padding-bottom: 35px;
- }
- .hero-section p span:before {
-	 position: absolute;
-	 content: '';
-	 bottom: 10px;
-	 left: 50%;
-	 height: 30px;
-	 width: 30px;
-	 margin-left: -15px;
-	 z-index: -1;
-	 background-repeat: no-repeat;
-	 background-position: center;
-	 background-size: 30px 30px;
-	 background-image: url('http://www.ivang-design.com/svg-load/portfolio/down.svg');
-	 opacity: 0.2;
-	 -webkit-transition: all 200ms linear;
-	 transition: all 200ms linear;
- }
- .hero-section p span:hover:before {
-	 opacity: 1;
-	 bottom: 5px;
- }
- 
- body.about-on .hero-section {
-	 transform: scale(0.75);
-	 -webkit-transition-delay: 0ms;
-	 transition-delay: 0ms;
- }
- body.contact-on .hero-section {
-	 transform: scale(0.75);
-	 -webkit-transition-delay: 0ms;
-	 transition-delay: 0ms;
- }
- body.travel-on .hero-section {
-	 transform: rotateX(-10deg);
-	 -webkit-transition-delay: 0ms;
-	 transition-delay: 0ms;
- }
- body.wildlife-on .hero-section {
-	 transform: rotateX(-10deg);
-	 -webkit-transition-delay: 0ms;
-	 transition-delay: 0ms;
- }
- body.nature-on .hero-section {
-	 transform: rotateX(-10deg);
-	 -webkit-transition-delay: 0ms;
-	 transition-delay: 0ms;
- }
- .about-text {
-	 position: absolute;
-	 font-size: 17px;
-	 line-height: 20px;
-	 font-weight: 700;
-	 color: #fff;
-	 letter-spacing: 2px;
-	 top: 50%;
-	 left: 40px;
-	 cursor: pointer;
-	 z-index: 2;
-	 -webkit-writing-mode: vertical-lr;
-	 writing-mode: vertical-lr;
-	 transform: translateY(-50%);
-	 -webkit-transition: all 200ms linear;
-	 transition: all 200ms linear;
- }
- .about-text:before {
-	 position: absolute;
-	 content: '';
-	 top: 50%;
-	 left: -25px;
-	 height: 30px;
-	 width: 30px;
-	 margin-top: -15px;
-	 z-index: -1;
-	 background-repeat: no-repeat;
-	 background-position: center;
-	 background-size: 30px 30px;
-	 background-image: url('http://www.ivang-design.com/svg-load/portfolio/left.svg');
-	 opacity: 0.2;
-	 -webkit-transition: all 200ms linear;
-	 transition: all 200ms linear;
- }
- .about-text:hover:before {
-	 opacity: 1;
-	 left: -30px;
- }
- .about-section {
-	 position: fixed;
-	 top: 0;
-	 left: 0;
-	 width: 100%;
-	 display: block;
-	 overflow: hidden;
-	 height: 100vh;
-	 background-color: rgba(31,32,41,1);
-	 transform: translateX(-100%);
-	 -webkit-transition: all 300ms linear;
-	 transition: all 300ms linear;
-	 z-index: 10;
- }
- body.about-on .about-section {
-	 transform: translateX(0);
-	 -webkit-transition-delay: 400ms;
-	 transition-delay: 400ms;
- }
- .about-close {
-	 position: absolute;
-	 top: 20px;
-	 right: 20px;
-	 width: 30px;
-	 display: block;
-	 overflow: hidden;
-	 height: 30px;
-	 -webkit-transition: all 200ms linear;
-	 transition: all 200ms linear;
-	 background-repeat: no-repeat;
-	 background-position: center;
-	 background-size: 36px 36px;
-	 background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
-	 cursor: pointer;
-	 z-index: 11;
- }
- .about-close:hover {
-	 transform: rotate(90deg);
- }
- .section-center {
-	 position: absolute;
-	 width: 100%;
-	 left: 0;
-	 top: 50%;
-	 transform: translateY(-50%);
-	 z-index: 1;
- }
- .about-section img {
-	 width: 100px;
-	 height: 100px;
-	 border-radius: 4px;
-	 display: block;
-	 margin: 0 auto;
-	 box-shadow: 0 0 20px rgba(0,0,0,0.15);
- }
- .about-section p span {
-	 font-family: 'Dancing Script', cursive;
-	 letter-spacing: 1px;
-	 color: #866BAF;
-	 font-size: 25px;
-	 font-weight: 400;
- }
- 
- .contact-text {
-	 position: absolute;
-	 font-size: 17px;
-	 line-height: 20px;
-	 font-weight: 700;
-	 color: #fff;
-	 letter-spacing: 2px;
-	 top: 50%;
-	 right: 40px;
-	 cursor: pointer;
-	 z-index: 2;
-	 -webkit-writing-mode: vertical-lr;
-	 writing-mode: vertical-lr;
-	 transform: translateY(-50%) rotate(180deg);
-	 -webkit-transition: all 200ms linear;
-	 transition: all 200ms linear;
- }
- .contact-text:before {
-	 position: absolute;
-	 content: '';
-	 top: 50%;
-	 left: -25px;
-	 height: 30px;
-	 width: 30px;
-	 margin-top: -15px;
-	 z-index: -1;
-	 background-repeat: no-repeat;
-	 background-position: center;
-	 background-size: 30px 30px;
-	 background-image: url('http://www.ivang-design.com/svg-load/portfolio/left.svg');
-	 opacity: 0.2;
-	 -webkit-transition: all 200ms linear;
-	 transition: all 200ms linear;
- }
- .contact-text:hover:before {
-	 opacity: 1;
-	 left: -30px;
- }
- .contact-section {
-	 position: fixed;
-	 top: 0;
-	 left: 0;
-	 width: 100%;
-	 display: block;
-	 overflow: hidden;
-	 height: 100vh;
-	 background-color: rgba(31,32,41,1);
-	 transform: translateX(100%);
-	 -webkit-transition: all 300ms linear;
-	 transition: all 300ms linear;
-	 z-index: 10;
- }
- body.contact-on .contact-section {
-	 transform: translateX(0);
-	 -webkit-transition-delay: 400ms;
-	 transition-delay: 400ms;
- }
- .contact-close {
-	 position: absolute;
-	 top: 20px;
-	 right: 20px;
-	 width: 30px;
-	 display: block;
-	 overflow: hidden;
-	 height: 30px;
-	 -webkit-transition: all 200ms linear;
-	 transition: all 200ms linear;
-	 background-repeat: no-repeat;
-	 background-position: center;
-	 background-size: 36px 36px;
-	 background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
-	 cursor: pointer;
-	 z-index: 11;
- }
- .contact-close:hover {
-	 transform: rotate(90deg);
- }
- .contact-section a{
-	 margin: 0 auto;
-	 font-size: 32px;
-	 font-weight: 900;
-	 letter-spacing: 1px;
-	 color: #fff;
-   display: inline-block;
- }
- .contact-section .social a{
-	 margin-left: 8px;
-	 margin-right: 8px;
-	 font-size: 15px;
-	 font-weight: 600;
-	 letter-spacing: 1px;
-	 color: #866BAF;
- }
- @media screen and (max-width: 580px){
-	 .contact-section a{
-		 font-size: 17px;
-	 }
-	 .contact-section .social a{
-		 margin-left: 3px;
-		 margin-right: 3px;
-		 font-size: 13px;
-		 letter-spacing: 0;
-	 }
- }
- 
- .travel-section,
- .wildlife-section,
- .nature-section {
-	 position: fixed;
-	 top: 100%;
-	 left: 0;
-	 padding: 100px 0;
-	 width: 100%;
-	 height: 100vh;
-	 display: block;
-	 overflow-x: hidden;
-	 overflow-y: auto;
-	 background-color: rgba(31,32,41,1);
-	 -webkit-transition: all 300ms linear;
-	 transition: all 300ms linear;
-	 z-index: 10;
- }
- .travel-close,
- .wildlife-close,
- .nature-close {
-	 position: absolute;
-	 top: 20px;
-	 right: 20px;
-	 width: 30px;
-	 display: block;
-	 overflow: hidden;
-	 height: 30px;
-	 -webkit-transition: all 200ms linear;
-	 transition: all 200ms linear;
-	 background-repeat: no-repeat;
-	 background-position: center;
-	 background-size: 36px 36px;
-	 background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
-	 cursor: pointer;
-	 z-index: 11;
- }
- .travel-close:hover,
- .wildlife-close:hover,
- .nature-close:hover {
-	 transform: rotate(90deg);
- }
- body.travel-on .travel-section {
-	 top: 0;
-	 -webkit-transition-delay: 400ms;
-	 transition-delay: 400ms;
- }
- body.wildlife-on .wildlife-section {
-	 top: 0;
-	 -webkit-transition-delay: 400ms;
-	 transition-delay: 400ms;
- }
- body.nature-on .nature-section {
-	 top: 0;
-	 -webkit-transition-delay: 400ms;
-	 transition-delay: 400ms;
- }
- .travel-section img,
- .wildlife-section img,
- .nature-section img {
-	 margin-top: 30px;
-	 width: 100%;
-	 height: auto;
-	 display: block;
-	 border-radius: 4px;
-	 box-shadow: 0 0 20px rgba(0,0,0,0.4);
- }
- .travel-section h3,
- .wildlife-section h3,
- .nature-section h3 {
-	 font-size: 44px;
-	 line-height: 1.3;
-	 font-weight: 700;
-	 letter-spacing: 1px;
-	 color: #fff;
- }
- .travel-section p,
- .wildlife-section p,
- .nature-section p {
-	 font-size: 14px;
-	 line-height: 1.7;
-	 letter-spacing: 1px;
- }
- .travel-section p span,
- .wildlife-section p span,
- .nature-section p span {
-	 font-size: 20px;
-	 line-height: 1.3;
-	 font-weight: 700;
-	 color: #866BAF;
- }
- /* #Link to page
- ================================================== */
- 
- .link-to-portfolio {
-	   position: fixed;
-	 bottom: 30px;
-	 right: 30px;
-	 z-index: 200;
-	 cursor: pointer;
-	 width: 50px;
-	 height: 50px;
-	 text-align: center;
-	 border-radius: 3px;
-	 background-position: center center;
-	 background-size: 65%;
-   background-repeat: no-repeat;
-	 background-image: url('https://075ce986b3.cbaul-cdnwnd.com/82e1b45eee95a44452b807ee8ff30c2d/200000006-cf455cf456/unnamed.png?ph=075ce986b3');
-	 box-shadow: 0 0 0 2px rgba(255,255,255,.1);
-	 transition: opacity .2s, border-radius .2s, box-shadow .2s;
-	 transition-timing-function: ease-out;
- }
- .link-to-portfolio:hover {
-	 opacity: 0.8;
-	 border-radius: 50%;
-	 box-shadow: 0 0 0 20px rgba(255,255,255,.1);
- }
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+html, body {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("https://images5.alphacoders.com/380/thumb-1920-380127.png");
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.form-structor {
+  background-color: #222;
+  border-radius: 15px;
+  height: 550px;
+  width: 350px;
+  position: relative;
+  overflow: hidden;
+}
+.form-structor::after {
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 500px;
+  background-image: url("https://media.discordapp.net/attachments/997912886712205454/1050015266978934794/photo-1503602642458-232111445657.jpg?width=467&height=701");
+}
+.form-structor .signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .signup.slide-up {
+  top: 5%;
+  -webkit-transform: translate(-50%, 0%);
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .signup.slide-up .form-holder, .form-structor .signup.slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+}
+.form-structor .signup.slide-up .form-title {
+  font-size: 1em;
+  cursor: pointer;
+}
+.form-structor .signup.slide-up .form-title span {
+  margin-right: 5px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .signup .form-title {
+  color: #fff;
+  font-size: 1.7em;
+  text-align: center;
+}
+.form-structor .signup .form-title span {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .signup .form-holder {
+  border-radius: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  margin-top: 50px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .signup .form-holder .input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  font-size: 12px;
+}
+.form-structor .signup .form-holder .input:last-child {
+  border-bottom: 0;
+}
+.form-structor .signup .form-holder .input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.form-structor .signup .submit-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.7);
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  margin: 15px auto;
+  padding: 15px 45px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .signup .submit-btn:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.form-structor .login {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  -webkit-transform: translate(-50%, 0);
+  background-color: #fff;
+  width: 200%;
+  height: 250px;
+  border-radius: 50%;
+  z-index: 4;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login .center {
+  position: absolute;
+  top: calc(50% - 10%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login .center .form-title {
+  color: #000;
+  font-size: 1.7em;
+  text-align: center;
+}
+.form-structor .login .center .form-title span {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login .center .form-holder {
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  overflow: hidden;
+  margin-top: 50px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login .center .form-holder .input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  font-size: 12px;
+}
+.form-structor .login .center .form-holder .input:last-child {
+  border-bottom: 0;
+}
+.form-structor .login .center .form-holder .input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.form-structor .login .center .submit-btn {
+  background-color: #6B92A4;
+  color: rgba(255, 255, 255, 0.7);
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  margin: 15px auto;
+  padding: 15px 45px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login .center .submit-btn:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.form-structor .login.slide-up {
+  top: 90%;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login.slide-up .center {
+  top: 10%;
+  -webkit-transform: translate(-50%, 0%);
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login.slide-up .form-holder, .form-structor .login.slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login.slide-up .form-title {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login.slide-up .form-title span {
+  margin-right: 5px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}

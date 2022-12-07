@@ -1,81 +1,28 @@
-(function($) { "use strict";
-		
-	//Page cursors
+console.clear();
 
-    document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-        t.style.left = n.clientX + "px", 
-		t.style.top = n.clientY + "px", 
-		e.style.left = n.clientX + "px", 
-		e.style.top = n.clientY + "px", 
-		i.style.left = n.clientX + "px", 
-		i.style.top = n.clientY + "px"
-    });
-    var t = document.getElementById("cursor"),
-        e = document.getElementById("cursor2"),
-        i = document.getElementById("cursor3");
-    function n(t) {
-        e.classList.add("hover"), i.classList.add("hover")
-    }
-    function s(t) {
-        e.classList.remove("hover"), i.classList.remove("hover")
-    }
-    s();
-    for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
-        o(r[a])
-    }
-    function o(t) {
-        t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
-    }
+const loginBtn = document.getElementById('login');
+const signupBtn = document.getElementById('signup');
 
-	
-	//About page
-	
-	$(".about-text").on('click', function () {
-		$("body").addClass("about-on");
+loginBtn.addEventListener('click', (e) => {
+	let parent = e.target.parentNode.parentNode;
+	Array.from(e.target.parentNode.parentNode.classList).find((element) => {
+		if(element !== "slide-up") {
+			parent.classList.add('slide-up')
+		}else{
+			signupBtn.parentNode.classList.add('slide-up')
+			parent.classList.remove('slide-up')
+		}
 	});
-	$(".about-close").on('click', function () {
-		$("body").removeClass("about-on");
-	});
+});
 
-	
-	//Contact page
-	
-	$(".contact-text").on('click', function () {
-		$("body").addClass("contact-on");
+signupBtn.addEventListener('click', (e) => {
+	let parent = e.target.parentNode;
+	Array.from(e.target.parentNode.classList).find((element) => {
+		if(element !== "slide-up") {
+			parent.classList.add('slide-up')
+		}else{
+			loginBtn.parentNode.parentNode.classList.add('slide-up')
+			parent.classList.remove('slide-up')
+		}
 	});
-	$(".contact-close").on('click', function () {
-		$("body").removeClass("contact-on");
-	});
-
-	
-	//Travel portfolio page
-	
-	$(".travel").on('click', function () {
-		$("body").addClass("travel-on");
-	});
-	$(".travel-close").on('click', function () {
-		$("body").removeClass("travel-on");
-	});
-
-	
-	//Wildlife portfolio page
-	
-	$(".wildlife").on('click', function () {
-		$("body").addClass("wildlife-on");
-	});
-	$(".wildlife-close").on('click', function () {
-		$("body").removeClass("wildlife-on");
-	});
-
-	
-	//Nature portfolio page
-	
-	$(".nature").on('click', function () {
-		$("body").addClass("nature-on");
-	});
-	$(".nature-close").on('click', function () {
-		$("body").removeClass("nature-on");
-	});
-
-	
-})(jQuery); 
+});
